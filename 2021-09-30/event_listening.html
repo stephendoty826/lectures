@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #big-red-button{
+            background-color: tomato;
+            width: 200px;
+            height: 200px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="big-red-button">
+
+        <div>
+            Big Red Button
+        </div>
+
+        <div id="count">0</div>
+    </div>
+
+    <script>
+        // retrieve the node out of the dom
+        let bigRedButton = document.querySelector("#big-red-button")
+
+        let clickCount = 0
+
+        let countDiv = document.querySelector("#count")
+
+        bigRedButton.addEventListener("click",() =>{
+            clickCount++
+
+            countDiv.textContent = clickCount.toString()
+
+        })
+
+        // // attach an onclick event listener
+        // let clickCount = 0
+
+        // let currentDiv = document.querySelector("#count")
+        
+        // bigRedButton.onclick = () => {
+
+        //     let count = parseInt(currentDiv.textContent)
+
+        //     count++
+
+        //     currentDiv.textContent = count.toString()
+
+
+        // }
+
+    </script>
+</body>
+</html>

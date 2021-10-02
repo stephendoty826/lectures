@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgPurple{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="bgPurple">
+        Existing text
+    </nav>
+
+    <script>
+        //1. create an anchor tag
+        var a = document.createElement("a")
+
+        //2. set attribute, for href, set innerText
+        a.setAttribute("href", "https://google.com")
+        a.textContent = "Google"
+
+        //3. retrieve nav element out of DOM
+        var nav = document.querySelector("nav")
+
+        //4. append our new element (a) to nav tag
+        nav.appendChild(a)
+
+        var h1 = document.createElement("h1")
+
+        h1.textContent = "Learning the DOM"
+
+        nav.append(h1)
+    </script>
+</body>
+</html>

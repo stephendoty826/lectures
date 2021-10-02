@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+
+        .container{
+            display: flex;
+            
+        }
+
+        .sidebar{
+            display: flex;
+            flex-direction: column;
+            font-size: 28px;
+        }
+
+        .content{
+            font-size: 14px;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(70, 70, 70);
+            padding-right: 20px;
+        }
+
+        ul{
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin: 0px;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-family: arial;
+        }
+
+        li{
+            list-style: none;
+            padding: 20px
+        }
+
+        li:hover{
+            background-color:slategrey;
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 10px;
+        }
+
+        .logo:hover{
+            background-color:slategrey;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+
+        <div class="logo">
+            <a href="#">Company Name</a>
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        
+    </nav>
+    <div class="container">
+        <div class="sidebar">
+            Left Sidebar
+            <div >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, facere? Sapiente delectus unde dolore nemo, quidem hic blanditiis modi voluptatem perspiciatis placeat laborum magni illum, quis consectetur inventore rerum odit!
+            </div>
+        </div>
+        <div>
+            Content Here Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere atque quis voluptate maxime blanditiis soluta possimus reiciendis magni ducimus harum non dolorem natus similique fugiat tempore nulla, maiores tenetur commodi.Content Here Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere atque quis voluptate maxime blanditiis soluta possimus reiciendis magni ducimus harum non dolorem natus similique fugiat tempore nulla, maiores tenetur commodi.
+        </div>
+        <div class="sidebar">
+            Right Sidebar
+            <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem dolorem repellat debitis labore nihil odit, ut consequatur maiores voluptates voluptas veniam inventore, quo quia perspiciatis. Omnis autem aut quisquam. Eaque?
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

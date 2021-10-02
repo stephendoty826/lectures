@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+        var body = document.querySelector("body")
+
+        var ul = document.createElement("ul")
+
+        var liHTMLFragment = ""
+
+        for(var i = 0; i < days.length; i++){
+            liHTMLFragment += `<li>${days[i]}</li>`
+        }
+        console.log(liHTMLFragment);
+
+        ul.innerHTML = liHTMLFragment
+
+        body.append(ul)
+
+    </script>
+</body>
+</html>

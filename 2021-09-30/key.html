@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let body = document.querySelector("body")
+
+        body.addEventListener("keydown", (event)=>{
+            // console.log(event.key);
+
+            if(event.key === "p"){
+                body.style.backgroundColor = "purple"
+            }
+
+        })
+
+        body.addEventListener("keyup", (event)=>{
+
+            if(event.key === "p"){
+                body.style.backgroundColor = "white"
+            }
+
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+
+        .container{
+            background-color: red;
+            display: flex;
+            /* flex-direction: column; */
+            /* justify-content: center; */
+            align-items: flex-end;
+            flex-wrap: wrap;
+            height: 900px;
+        }
+
+        .item{
+            background-color: blue;
+            border: 5px solid darkblue;
+            margin: 2px;
+            height: 100px;
+            width: 100px;
+            color: white;
+            font-size: 36px;
+        }
+
+        .item2{
+            background-color: blue;
+            border: 5px solid darkblue;
+            margin: 2px;
+            height: 100px;
+            color: white;
+            font-size: 36px;
+        }
+
+        .align_self{
+            align-self: center;
+        }
+
+        .fg1{
+            flex-grow: 1;
+        }
+        
+        .fg2{
+            flex-grow: 2;
+        }
+
+        .fg3{
+            flex-grow: 3;
+        }
+
+        .fg4{
+            flex-grow: 4;
+        }
+
+        .order1{
+            order: 1;
+        }
+
+        .order2{
+            order: 2;
+        }
+
+        .order3{
+            order: 3;
+        }
+        
+        .order_neg{
+            order: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item2 fg1">a</div>
+        <div class="item2 fg3 align_self">b</div>
+        <div class="item2 fg1">c</div>
+    </div>
+
+    <!-- <div class="container">
+        <div class="item order3">1</div>
+        <div class="item">2</div>
+        <div class="item order_neg">3</div>
+        <div class="item order3">4</div>
+        <div class="item order2">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+    </div> -->
+</body>
+</html>
