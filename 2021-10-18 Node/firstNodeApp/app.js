@@ -21,7 +21,7 @@ const server = http.createServer((request, response) => {
         case "/currenttime":
             response.setHeader("Content-Type", "text/html")
             let date = new Date
-            response.end(`Time is: ${date}`)
+            response.end(`It is currently: ${date}`)
             break
         case "/data":
             response.setHeader("Content-Type", "application/json")

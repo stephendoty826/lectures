@@ -49,4 +49,4 @@ function balancedBrackets(string) {
     console.log("error:", isError);
 }
 
-balancedBrackets('({[hel]lo]})')
+balancedBrackets('')
