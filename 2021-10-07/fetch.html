@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // State
+    // population
+    // todayCases
+
+    fetch("https://corona.lmao.ninja/v2/states")
+    .then(result =>{
+        return result.json()
+    })
+    .then(data => {
+
+        console.log(data);
+
+        let body = document.querySelector("body")
+        let htmlFragment = ""
+
+        data.forEach(state=>{
+            console.log(state.state);
+            console.log(state.population);
+            console.log(state.todayCases);
+            htmlFragment += `<h4>${state.state}</h4>`
+            htmlFragment += `<ul>
+                                <li>Population: ${state.population}</li>
+                                <li>Today's cases: ${state.todayCases}</li>
+                            </ul>`
+        })
+        body.innerHTML = htmlFragment
+    })
+
+    </script>
+</body>
+</html>

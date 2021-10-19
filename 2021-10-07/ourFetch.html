@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    ourFetch
+
+    <script>
+
+        const ourFetch = (url) => {
+            
+            // create promise
+            let promise = new Promise((resolve, reject)=>{
+
+                let xhr = new XMLHttpRequest()
+
+                // xhr code to make a request to url
+                xhr.open("GET", url)
+
+                xhr.onreadystatechange = () => {
+                    if(xhr.readyState === 4 && xhr.status === 200){
+                        // resolve, or reject the response to appropriate cb
+                        resolve(xhr.responseText)
+                    }
+                    else if(xhr.readyState === 4 && xhr.status != 200){
+                        reject(`${xhr.status} error was encountered.`)
+                    }
+                }
+
+                xhr.send()
+            })
+            // // pass string of data to first .then() (inside, convert string to object)
+            // .then(resultOfPromise=>{
+            //     let data = JSON.parse(resultOfPromise)
+            //     return data
+            // })
+            // // return objec to next .then()  (inside, print out data)
+            // .then(data=>{
+            //     console.log(data);
+            //     data.forEach(dataBlock=>{
+            //         console.log(dataBlock.email)
+            //     })
+            // })
+            // .catch(error=>{
+            //     console.log(error);
+            // })
+
+            return promise // if we return the promise to the ourFetch function we can chain the .then()'s to the end of the fetch function.
+        }
+
+        ourFetch("https://jsonplaceholder.typicode.com/comments")
+        // pass string of data to first .then() (inside, convert string to object)
+        .then(resultOfPromise=>{
+                let data = JSON.parse(resultOfPromise)
+                return data
+            })
+            // return objec to next .then()  (inside, print out data)
+        .then(data=>{
+            console.log(data);
+            data.forEach(dataBlock=>{
+                console.log(dataBlock.email)
+            })
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+
+    </script>
+
+</body>
+</html>

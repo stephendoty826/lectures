@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    making api calls
+    
+    <script>
+
+    let xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts')
+
+        xhr.onreadystatechange = () => {
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(typeof(xhr.responseText))
+                //this is the code that will execute
+                // console.log(xhr.responseText)
+
+                //serialization
+                let data = JSON.parse(xhr.responseText) //making an object from string
+
+                //deserialization
+                let dataAsAString = JSON.stringify(data) // string from object
+                console.log(dataAsAString)
+                // console.log(data)
+            } 
+        }
+        xhr.send()
+        console.log('hello world')
+
+    </script>
+</body>
+</html>
