@@ -123,8 +123,6 @@ let data = {data: [{
 function navbar(){
     let nav = ""
     for(dog of data.data){
-        console.log(dog.id);
-        console.log(dog.name);
         nav += `<li><a href="/dogs/${dog.id}">${dog.name}</a></li>`
     }
     return (`<ul>${nav}</ul>`)
