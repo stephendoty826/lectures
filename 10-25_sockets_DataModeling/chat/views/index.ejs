@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="chat">
+        <input type="submit">
+    </form>
+    <ul id="messages">
+
+    </ul>
+
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
+    <script>
+
+        const socket = io() // this is the websocket api
+        const messages = document.querySelector("#messages")
+        const form = document.querySelector("form")
+        const chat = document.querySelector("#chat")
+
+        // when a message comes in
+        // server broadcast
+        socket.on("messageFromServer", (serverMessage) => {
+            
+            let liTags = `<li>${serverMessage}</li>` + messages.innerHTML
+
+            messages.innerHTML = liTags
+        })
+
+        // emit a message to the server
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            // retrieve message from input field
+                // chat.value
+            // take socket object and emit message to node server with socket.emit()
+            socket.emit("messageFromClient", chat.value)
+            
+        })
+
+
+
+    </script>
+</body>
+</html>
