@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    This is my home page!
+    <% menu.forEach(item => { %>
+        <h1><%= item.name %> </h1>
+        <h3><%= item.fooddescription %> </h3>
+        <h3><%= item.price %> </h3>
+        <img height="200px" src="<%= item.imageurl %>" alt="">
+    <% }) %>    
 </body>
 </html>
