@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'octopus',
+    freezeTableName: true
   });
   return octopus;
 };

@@ -35,9 +35,33 @@ const findAll = async() => {
 
     // console.log(deletedID);
 
-    let update = await db.user.update({lastName: "West"}, {where: {id: 8}}) // this returns either 0 or 1 (0 is false, 1 is true)
+    // let update = await db.user.update({lastName: "West"}, {where: {id: 8}}) // this returns either 0 or 1 (0 is false, 1 is true)
 
-    console.log(update);
+    // console.log(update);
+
+    let records = await db.blogs.findAll( {include: [{
+        model: db.user, 
+        required: true, 
+        where: {firstName: 'Matt'}
+    }]})
+
+    records.forEach(blog =>{
+        console.log(`${blog.title} ${blog.body} ${blog.user.firstName} ${blog.user.lastName}`);
+    })
+
+    // let records = await db.user.findAll({include: [{
+    //     model: db.blogs,
+    //     required: true
+    // }]})
+    // records.forEach(user => {
+    //     console.log(`${user.firstName} ${user.lastName}`);
+
+    //     user.blogs.forEach(blog => {
+    //         console.log(`>>>>>${blog.title}`);
+    //     })
+    // })
+
+
 
 } 
 

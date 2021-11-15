@@ -1,8 +1,10 @@
 
 const express = require("express")
 const router = express.Router()
+const db = require("../models")
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
+    await db.user.findAll()
     res.send("home page learning sequelize")
 })
 
