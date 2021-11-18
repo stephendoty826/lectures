@@ -1,0 +1,27 @@
+
+.purpleButton{
+  background-color: purple;
+  font-size: 20px;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  border: none;
+}
+
+.orangeButton{
+  background-color: tomato;
+  font-size: 20px;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  border: none;
+}
+
+.blueButton{
+  background-color: steelblue;
+  font-size: 20px;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  border: none;
+}
