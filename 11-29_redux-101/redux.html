@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.min.js"></script>
+
+    <script>
+
+        // action creator = function that returns an object
+        const addContact = (id, firstName, address) => {
+            return {
+                type: "ADD_CONTACT", 
+                data: {
+                    id,
+                    firstName,
+                    address
+                }
+            }
+        }
+
+        // action creator = function that returns an object
+        const removeContact = (id) => {
+            return {
+                type: "REMOVE_CONTACT", 
+                id: id
+            }
+        }
+
+        const increment = (amount) => {
+            return {
+                type: "INCREMENT",
+                amount: amount
+            }
+        }
+        
+        const decrement = (amount) => {
+            return {
+                type: "DECREMENT",
+                amount: amount
+            }
+        }
+
+        // always passed the current state and the dispatched action
+
+        // purpose of reducer is to update the global state
+        const reducer = (state, action) => {
+            
+            // if no state already exists, reducer is responsible for initializing it
+            
+            // this is global state
+            if(state === undefined){
+                state = {
+                    contacts: [], // [{}, {}, {}]
+                    count: 0
+                }
+            }
+
+            // looking for a matching action
+            if(action.type === "ADD_CONTACT"){
+                // this logic gets executed if type matches
+                return {
+                    ...state,
+                    contacts: state.contacts.concat(action.data)
+                }
+            }
+            else if(action.type === "REMOVE_CONTACT"){
+                return {
+                    ...state,
+                    contacts: state.contacts.filter(contact=>{
+                        return contact.id !== action.id
+                    })
+                }
+            }
+            else if(action.type === "INCREMENT"){
+                return {
+                    ...state,
+                    count: state.count + action.amount
+                }
+            }
+            else if(action.type === "DECREMENT"){
+                return {
+                    ...state,
+                    count: state.count - action.amount
+                }
+            }
+            else{
+                return state
+            }
+
+        }
+
+        const store = Redux.createStore(reducer) // pass in a reducer
+
+        const showState = () => {
+            console.log(store.getState())
+        }
+
+        store.subscribe(showState)
+        
+
+        // store.dispatch(addContact(1, "Hunter", "Houston"))
+        // store.dispatch(addContact(2, "Devin", "Atlanta"))
+        // store.dispatch(addContact(3, "James", "Austin"))
+        // store.dispatch(addContact(4, "Emily", "Atlanta"))
+        // store.dispatch(addContact(5, "Veronica", "Houston"))
+
+        // store.dispatch(removeContact(5))
+
+        store.dispatch(increment(1))
+        store.dispatch(increment(6))
+        store.dispatch(increment(10))
+        store.dispatch(decrement(3))
+        store.dispatch(decrement(7))
+
+    </script>
+</body>
+</html>
