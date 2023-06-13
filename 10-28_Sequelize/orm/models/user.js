@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
 
-      models.user.hasMany(models.blogs, {foreignKey: "userID"}) // takes model to be joined and foreignKey 
+      models.user.hasMany(models.blogs, {foreignKey: "userID"}) // takes model to be joined and foreignKey  
 
     }
   };

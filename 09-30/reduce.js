@@ -32,14 +32,13 @@ const exampleArray = [1,2,[3,4, [5,6,7], 8], 9, 10]
 
 // ??????
 function flatten(arr){
-    let flattenedArray = arr.reduce((acc, val)=>{
-        if(val.length > 1){
-            console.log(`(val.length > 1) ${val.length}: ${val}`)
-            return flatten(val)
+    return arr.reduce((acc, val)=>{
+        if(val.length > 1){ // could also check type using Array.isArray(val)
+            return acc.concat(flatten(val))
         }
-        return acc.push(val) // console is saying acc.push is not a function...concat is sort of working??? why???
-    }, []) // [1, 2, ] --- [3, 4, ] --- [5, 6, 7]
-    return flattenedArray
+        acc.push(val)
+        return acc
+    }, [])
 }
 
 console.log(flatten(exampleArray))
